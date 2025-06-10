@@ -119,24 +119,3 @@ SELECT * FROM  employees;
 (3 rows)
 ```
 
-### Additional Notes
-- You can run backup automatically by creating a shell script, e.g. /root/pg_backup_test.sh
-- PostgreSQL service must be started inside the container:
-
-```bash
-service postgresql start
-```
-- .pgpass helps avoid having to type your password every time
-
-### What I Learned
-- PostgreSQL must be installed inside the container before using psql or pg_dump
-- psql is required to run SQL, while the shell (postgres@...$) is for system-level tasks
-- Backup uses pg_dump, and restore can be done with psql -f or pg_restore (if using .backup from pg_dump in custom format)
-
-### Clean Up
-Stop or remove the container when done:
-
-```bash
-docker stop backup_resotre
-docker rm backup_resotre
-```
