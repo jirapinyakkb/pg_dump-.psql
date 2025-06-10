@@ -97,7 +97,26 @@ PGPASSFILE=/root/.pgpass psql -U postgres -h localhost -d restore_my_test_db -f 
 - Check that the data is restored:
 
 ```bash
-psql -U postgres -h localhost -d restore_my_test_db -c "SELECT * FROM employees;"
+psql -U postgres -h localhost -d restore_my_test_db 
+```
+
+- Example output:
+
+```bash
+\dt
+```
+
+```bash
+SELECT * FROM  employees;
+```
+
+```bash
+ id |  name   | position | salary 
+----+---------+----------+--------
+  1 | Alice   | Engineer |  60000
+  2 | Bob     | Manager  |  75000
+  3 | Charlie | Intern   |  30000
+(3 rows)
 ```
 
 ### Additional Notes
