@@ -108,7 +108,7 @@ psql -U postgres -h localhost -d restore_my_test_db -c "SELECT * FROM employees;
 service postgresql start
 ```
 - .pgpass helps avoid having to type your password every time
-- 
+
 ### What I Learned
 - PostgreSQL must be installed inside the container before using psql or pg_dump
 - psql is required to run SQL, while the shell (postgres@...$) is for system-level tasks
